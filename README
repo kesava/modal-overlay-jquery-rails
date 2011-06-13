@@ -1,0 +1,28 @@
+= Modal Overlay
+
+This little plugin allow you to have you links show an overlay window ala lightbox
+but where the content is populated with the target of the link. This is derived from the modal-overlay plugin built by Eric Methot which uses Prototype and/or Lowpro. This plugin however uses only jQuery.
+
+Example:
+
+<a href="/login" class="modal-overlay-show">Login</a>
+
+This link will dim the page and show a centered overlay with a login form in it.
+Yxou will need to add two divs to your pages as follow:
+
+<div id="modal-overlay" style="position:absolute;top:10em;left:2em;right:2em;bottom:0;z-index:10001;display:none;"></div>
+<div id="modal-overlay-dimmer" style="position:absolute;top:0;left:0;bottom:0;right:0;background-color:black;z-index:10000;display:none;"></div>
+
+Then, the following code becomes functionaly equivalent:
+
+<a href="#" onclick="ModalOverlay.open(this.url); return false;">Login</a>
+
+Of course, we are using rails, so we have a little helper to do the work for us:
+
+<%= link_to_show_overlay, 'Login', login_path %>
+<%= link_to_hide_overlay, 'Cancel', public_path %>
+
+Enjoy!
+
+
+Copyright (c) 2011, Kesava Mallela released under the MIT license

@@ -15,7 +15,7 @@ Yxou will need to add two divs to your pages as follow:
 
 Then, the following code becomes functionaly equivalent:
 
-<a href="#" onclick="ModalOverlay.open(this.url); return false;">Login</a>
+<a href="#" onclick="ModalOverlay.fetch(this.url); return false;">Login</a>
 
 Of course, we are using rails, so we have a little helper to do the work for us:
 
